@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container__button {
+    border: none;
+    padding: 28px;
+    background-color: #005B41;
+    font-size: 18px;
+    font-family: 'poppins', sans-serif;
+    color: #FFF;
+    border-radius: 10px;
+    margin: 40px 0;
+    cursor: pointer;
+    transition: .2s all ease-in-out;
+    border: 2px solid #005B41;
+}
+
+.container__button:hover {
+    border: 2px solid #005B41;
+    background-color: transparent;
+    color: #005B41;
+}
