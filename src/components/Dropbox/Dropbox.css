@@ -1,0 +1,28 @@
+.dropbox {
+    margin: 24px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dropbox label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #212121;
+    margin-bottom: 8px;
+}
+
+.dropbox select {
+    width: 100%;
+    border: 2px solid transparent;
+    background-color: #FFF;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    font-size: 24px;
+    padding: 24px;
+    opacity: 0.6;
+}
+
+.dropbox select:focus {
+    border: 2px solid #212121; 
+    opacity: 1;
+}
