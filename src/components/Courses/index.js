@@ -1,10 +1,17 @@
 import "./Courses.css";
 import Card from "../Card";
+import hexToRgba from "hex-to-rgba";
 
-const Courses = ({ courses, primaryColor, secundaryColor, registers }) => {
+const Courses = ({ courses, color, registers, onDelete, onChangeColor, id }) => {
     return (
-        registers.length > 0 && <section className="courses" style={{ backgroundColor: secundaryColor }}>
-            <h3 style={{ color: primaryColor }}>{courses}</h3>
+        registers.length > 0 && <section className="courses" style={{ backgroundColor: hexToRgba(color, '0.6') }}>
+            <input 
+              className="courses__input-color"
+              type="color"
+              value={color} 
+              onChange={(e) => onChangeColor(e.target.value, id)} 
+            />
+            <h3>{courses}</h3>
             <div className="courses__card">
                 {registers.map(register => 
                     <Card 
@@ -15,7 +22,9 @@ const Courses = ({ courses, primaryColor, secundaryColor, registers }) => {
                       cpf={register.cpf}
                       age={register.age}
                       registration={register.registration}
-                      primaryColor={primaryColor}
+                      color={color}
+                      onDelete={onDelete}
+                      onChangeColor={onChangeColor}
                     />
                 )}
             </div>

@@ -51,18 +51,21 @@ const Form = ({ onRegister, courses }) => {
                 <TextField 
                   label="Nome" 
                   placeholder="Digite o seu nome"
+                  required={true}
                   value={name}
                   onChange={(value) => setName(value)}
                 />
                 <TextField 
                   label="Idade" 
                   placeholder="Digite a sua idade"
+                  required={true}
                   value={age}
                   onChange={(value) => setAge(value)}
                 />
                 <TextField 
                   label="Foto de perfil"
                   placeholder="Insira o link de uma foto"
+                  required={true}
                   value={image}
                   onChange={(value) => setImage(value)}
                 />
@@ -74,18 +77,21 @@ const Form = ({ onRegister, courses }) => {
                 <TextField 
                   label="Matrícula"
                   placeholder="Digite o seu número de matrícula"
+                  required={true}
                   value={registration}
                   onChange={(value) => setRegistration(value)}
                 />
                 <TextField 
                   label="CPF" 
                   placeholder="Digite o seu CPF"
+                  required={true}
                   value={cpf}
                   onChange={(value) => setCpf(value)}
                 />
                 <Dropbox 
                   label="Curso" 
                   courses={courses}
+                  required={true}
                   value={course}
                   onChange={(value) => setCourse(value)}
                 />

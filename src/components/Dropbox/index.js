@@ -8,12 +8,13 @@ const Dropbox = ({ label, courses, onChange }) => {
             <label>{label}</label>
             <select onChange={(e) => onChange(e.target.value)}>
                 <option value=""></option>
-                {courses.map(item => {
-                   return <option key={item}>{item}</option>
-                })}
+                {courses.map((item, index) => (
+                    <option key={index}>{item}</option>
+                ))}
             </select>
-        </div>
-    )
-}
+      </div>
+    );
+  };
+  
 
 export default Dropbox;

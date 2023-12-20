@@ -2,6 +2,7 @@ import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Courses from "./components/Courses";
 import { useState } from "react";
+import { v4 as id } from 'uuid';
 
 function App() {
 
@@ -11,45 +12,58 @@ function App() {
     setRegisters([...registers, register]);
   }
 
-  const courses = [
-    {
+  const [courses, setCourses] = useState([
+    {  
+      id: id(),
       course: "Análise e Desenvolvimento de Sistemas",
-      primaryColor: "#57C278",
-      secundaryColor: "#D9F7E9"
+      color: "#D9F7E9"
     },
-    {
+    {  
+      id: id(),
       course: "Sistemas para Internet",
-      primaryColor: "#82CFFA",
-      secundaryColor: "#E8F8FF"
+      color: "#E8F8FF"
     },
-    {
+    {  
+      id: id(),
       course: "Recursos Humanos",
-      primaryColor: "#A6D157",
-      secundaryColor: "#F0F8E2"
+      color: "#F0F8E2"
     },
-    {
+    {  
+      id: id(),
       course: "Psicologia",
-      primaryColor: "#E06B69",
-      secundaryColor: "#FDE7E8"
+      color: "#FDE7E8"
     },
-    {
+    {  
+      id: id(),
       course: "Logística",
-      primaryColor: "#DB6EBF",
-      secundaryColor: "#FAE9F5"
+      color: "#FAE9F5"
     },
-    {
+    {  
+      id: id(),
       course: "Administração",
-      primaryColor: "#FFBA05",
-      secundaryColor: "#FFF5D9"
+      color: "#FFF5D9"
     },
     {
+      id: id(),
       course: "Gestão Portuária",
-      primaryColor: "#FF8A29",
-      secundaryColor: "#FFEEDF"
+      color: "#FFEEDF"
     },
-  ]
+  ]);
 
-  console.log(registers);
+  const handleDeleteRegister = () => {
+    console.log("Deletando registro!");
+  }
+
+  const handleChangeColorCard = (color, id) => {
+    setCourses(courses.map(item => {
+      if(item.id === id) {
+        item.color = color;
+      }
+  
+      return item;  
+    }));
+  }
+  
   
   return (
     <div className="App">
@@ -58,13 +72,15 @@ function App() {
         onRegister={(register) => handleAddRegister(register)}
         courses={courses.map(item => item.course)}
       />
-    {courses.map(item => 
+    {courses.map((item, index) => 
       <Courses 
-        key={item.course}
+        key={index}
         courses={item.course}
-        primaryColor={item.primaryColor}
-        secundaryColor={item.secundaryColor}
+        id={item.id}
+        color={item.color}
         registers={registers.filter(register => register.course === item.course)}
+        onDelete={handleDeleteRegister}
+        onChangeColor={handleChangeColorCard}
       />
     )}
     </div>

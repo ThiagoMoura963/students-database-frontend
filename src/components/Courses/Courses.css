@@ -2,6 +2,13 @@
     padding: 32px;
     text-align: center;
     font-family: 'poppins', sans-serif;
+    position: relative;
+}
+
+.courses__input-color {
+    position: absolute;
+    top: 50px;
+    right: 30px;
 }
 
 .courses h3 {
