@@ -8,8 +8,8 @@ const Dropbox = ({ label, courses, onChange }) => {
             <label>{label}</label>
             <select onChange={(e) => onChange(e.target.value)}>
                 <option value=""></option>
-                {courses.map((item, index) => (
-                    <option key={index}>{item}</option>
+                {courses.map(item=> (
+                    <option key={item}>{item}</option>
                 ))}
             </select>
       </div>

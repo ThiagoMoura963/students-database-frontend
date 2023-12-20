@@ -3,28 +3,22 @@ import Card from "../Card";
 import hexToRgba from "hex-to-rgba";
 
 const Courses = ({ courses, color, registers, onDelete, onChangeColor, id }) => {
-    return (
+    return (  
         registers.length > 0 && <section className="courses" style={{ backgroundColor: hexToRgba(color, '0.6') }}>
-            <input 
+            <input  
               className="courses__input-color"
               type="color"
               value={color} 
               onChange={(e) => onChangeColor(e.target.value, id)} 
             />
-            <h3>{courses}</h3>
+            <h3 style={{ borderColor: color }}>{courses}</h3>
             <div className="courses__card">
-                {registers.map(register => 
+                {registers.map((register, index) => 
                     <Card 
-                      key={register.course}
-                      course={register.course}
-                      name={register.name}
-                      image={register.image}
-                      cpf={register.cpf}
-                      age={register.age}
-                      registration={register.registration}
+                      key={index}
                       color={color}
                       onDelete={onDelete}
-                      onChangeColor={onChangeColor}
+                      register={register}
                     />
                 )}
             </div>

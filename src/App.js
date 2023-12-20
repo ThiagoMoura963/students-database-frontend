@@ -1,6 +1,7 @@
 import Banner from "./components/Banner";
 import Form from "./components/Form";
 import Courses from "./components/Courses";
+import Footer from "./components/Footer";
 import { useState } from "react";
 import { v4 as id } from 'uuid';
 
@@ -16,73 +17,80 @@ function App() {
     {  
       id: id(),
       course: "Análise e Desenvolvimento de Sistemas",
-      color: "#D9F7E9"
+      color: "#57C278"
     },
     {  
       id: id(),
       course: "Sistemas para Internet",
-      color: "#E8F8FF"
+      color: "#82CFFA"
     },
     {  
       id: id(),
       course: "Recursos Humanos",
-      color: "#F0F8E2"
+      color: "#A6D157"
     },
     {  
       id: id(),
       course: "Psicologia",
-      color: "#FDE7E8"
+      color: "#E06B69"
     },
     {  
       id: id(),
       course: "Logística",
-      color: "#FAE9F5"
+      color: "#DB6EBF"
     },
     {  
       id: id(),
       course: "Administração",
-      color: "#FFF5D9"
+      color: "#FFBA05"
     },
     {
       id: id(),
       course: "Gestão Portuária",
-      color: "#FFEEDF"
+      color: "#FF8A29"
     },
   ]);
 
-  const handleDeleteRegister = () => {
-    console.log("Deletando registro!");
+  const handleDeleteRegister = (registerId) => {
+    setRegisters(registers.filter(register => register.registerId !== registerId));
   }
 
   const handleChangeColorCard = (color, id) => {
     setCourses(courses.map(item => {
       if(item.id === id) {
         item.color = color;
-      }
+      } 
   
       return item;  
     }));
+
+    console.log(registers);
   }
-  
+
+  const addCourse = (newCourse) => {
+    setCourses([ ...courses, { ...newCourse, id: id() }])
+  }
   
   return (
     <div className="App">
       <Banner />
       <Form 
+        addCourse={addCourse}
         onRegister={(register) => handleAddRegister(register)}
         courses={courses.map(item => item.course)}
       />
-    {courses.map((item, index) => 
-      <Courses 
-        key={index}
-        courses={item.course}
-        id={item.id}
-        color={item.color}
-        registers={registers.filter(register => register.course === item.course)}
-        onDelete={handleDeleteRegister}
-        onChangeColor={handleChangeColorCard}
-      />
-    )}
+      {courses.map((item, index) => 
+        <Courses 
+          key={index}
+          courses={item.course}
+          id={item.id}
+          color={item.color}
+          registers={registers.filter(register => register.course === item.course)}
+          onDelete={handleDeleteRegister}
+          onChangeColor={handleChangeColorCard}
+        />
+      )}
+      <Footer />
     </div>
   );
 }
