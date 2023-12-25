@@ -1,0 +1,35 @@
+.form {
+    width: 60vw;
+    margin: 5rem auto;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    background-color: var(--background-form);
+    padding: 4rem;
+}
+
+.form h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .form {
+        width: 80vw;
+        padding: 0 2rem;
+    }
+
+    .form h2 {
+        padding-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 744px) {
+    .form {
+        width: 90vw;
+        padding: 0 2.5rem;
+    }
+
+    .form h2 {
+        padding-top: 4rem;
+    }
+}

@@ -1,0 +1,80 @@
+header {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-color);
+    box-shadow: 0px 3px 10px #464646;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    color: var(--white);
+}
+
+.navList ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navItem {
+    margin: 0 15px;
+}
+
+.mobileMenuIcon {
+    display: none;
+}
+
+.mobileMenu {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .navbar {
+        padding: 1.5rem 4rem;
+    }
+
+    .navItem {
+        display: none;
+    }
+
+    .mobileMenuIcon {
+        display: block;
+    }
+
+    .mobileMenuIcon button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    .mobileMenu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .mobileMenu .navItem {
+        display: block;
+        padding-top: 1.2rem;
+    }
+
+    .open {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 744px) {
+    .logo {
+        font-size: .8rem;
+    }
+}

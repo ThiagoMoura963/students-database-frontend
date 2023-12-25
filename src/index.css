@@ -1,5 +1,16 @@
+:root {
+  --white: #FFF;
+  --green: #005B41;
+  --primary-color: #0F0F0F;
+  --background-form: #F2F2F2;
+}
+
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1, h2 {
+  font-family: 'poppins', sans-serif;
 }

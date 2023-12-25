@@ -1,0 +1,17 @@
+.registers {
+    text-align: center;
+    min-height: 100vh;;
+  }
+  
+  .registers h1 {
+    font-size: 40px;
+    color: var(--green);
+    border-bottom: 4px solid var(--green);
+    display: inline-block;
+    padding-bottom: 24px;
+    margin: 32px 0;
+  }
+
+  .whiteSpace {
+    height: auto;
+  }

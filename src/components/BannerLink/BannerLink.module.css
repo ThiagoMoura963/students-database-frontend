@@ -1,0 +1,16 @@
+.link{
+    text-decoration: none;
+    font-size: 1.15rem;
+    color: var(--white);
+    font-weight: 400;
+}
+
+.linkActive {
+    border: 2px solid var(--green);
+    padding: .3rem;
+    color: var(--green);
+}
+
+.link:nth-child(2) {
+    margin-right: 2rem;
+}

@@ -2,7 +2,7 @@ import "./Courses.css";
 import Card from "../Card";
 import hexToRgba from "hex-to-rgba";
 
-const Courses = ({ courses, color, registers, onDelete, onChangeColor, id }) => {
+const Courses = ({ courses, color, registers, onDelete, onChangeColor, id, onFavorite }) => {
     return (  
         registers.length > 0 && <section className="courses" style={{ backgroundColor: hexToRgba(color, '0.6') }}>
             <input  
@@ -19,6 +19,7 @@ const Courses = ({ courses, color, registers, onDelete, onChangeColor, id }) => 
                       color={color}
                       onDelete={onDelete}
                       register={register}
+                      onFavorite={onFavorite}
                     />
                 )}
             </div>
